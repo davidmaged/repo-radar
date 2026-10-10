@@ -23,7 +23,7 @@ export const NavBar = ({ pages }: { pages: ILink[] }) => {
             Repo Radar
           </Typography>
 
-          <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 1, flexGrow: 1 }}>
+          <Box sx={{ display: { md: 'flex' }, gap: 1, flexGrow: 1 }}>
             {pages.map((page) => (
               <Button
                 key={page.to}
