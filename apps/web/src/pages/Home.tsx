@@ -16,7 +16,6 @@ function Home() {
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
-  const [totalCount, setTotalCount] = useState(0);
   const favorites = useSelector((state: any) => state.favorites);
   const debouncedSearch = useDebounce(search);
   const dispatch = useDispatch();
@@ -31,7 +30,6 @@ function Home() {
     setPrevSearch(debouncedSearch);
     setPage(1);
     setRepos([]);
-    setTotalCount(0);
     setHasMore(true);
     setError(null);
     setLoading(true);
@@ -45,7 +43,6 @@ function Home() {
           ? await searchRepos(debouncedSearch, page)
           : await getTrendingRepos(page);
         setRepos((prev) => (page === 1 ? results.items : [...prev, ...results.items]));
-        setTotalCount(results.total_count);
         setHasMore(page * PER_PAGE < Math.min(results.total_count, GITHUB_SEARCH_LIMIT));
         setError(null);
       } catch (err) {

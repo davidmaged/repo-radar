@@ -18,7 +18,7 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import BugReportOutlinedIcon from '@mui/icons-material/BugReportOutlined';
 import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined';
-import { IRepo } from '../models/repo.model';
+import type { IRepo } from '../models/repo.model';
 import { useState, useCallback, useEffect } from 'react';
 
 export const RepoCard = ({
